@@ -15,4 +15,4 @@ def createUser():
     if status == true:
         return jsonify({'Successful'}),200
     else:
-        return jsonify({'error':status}),400
+        return jsonify({'error!':status}),400
