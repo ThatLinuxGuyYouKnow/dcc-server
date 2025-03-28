@@ -9,7 +9,7 @@ supabase: Client = create_client(supabase_url=url, supabase_key=key)
 
 load_dotenv()
 def signUpUser( request):
-    data = request.get_json()
+    data = request.get_json() #dddd
     first_name = data.get('first_name')
     last_name = data.get('last_name')
     email = data.get('email')
