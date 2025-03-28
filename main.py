@@ -1,8 +1,12 @@
 from auth.signup import signUpUser
 from flask import Flask, request, jsonify, send_file
+from flask_cors import CORS
 
 app = Flask(__name__)
 
+# Enable CORS for all routes
+CORS(app)  # Allow all origins
+# OR, to allow specific origins:
 
 
 @app.route('/signup', methods=['POST'])
