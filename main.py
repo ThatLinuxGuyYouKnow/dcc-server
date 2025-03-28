@@ -12,7 +12,7 @@ CORS(app)  # Allow all origins
 @app.route('/signup', methods=['POST'])
 def createUser():
     status = signUpUser(request=request)
-    if status == true:
+    if status:
         return jsonify({'Successful'}),200
     else:
         return jsonify({'error!':status}),400
