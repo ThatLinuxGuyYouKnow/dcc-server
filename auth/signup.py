@@ -16,7 +16,7 @@ def signUpUser( request):
     password = data.get('password')
     age = data.get('age')
     try:
-     auth_response = return supabase.auth.sign_up({'email':email, 'password':password})
+     auth_response =  supabase.auth.sign_up({'email':email, 'password':password})
      data = {
         "user_id": auth_response.user.id,
         "last_name":last_name,
