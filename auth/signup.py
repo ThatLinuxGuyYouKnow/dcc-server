@@ -23,6 +23,6 @@ def signUpUser( request):
         "first_name": first_name,
         "email":email
      }
-     return true,  data
+     return True,  data
     except Exception as e: 
-     return false, e
+     return False, e
