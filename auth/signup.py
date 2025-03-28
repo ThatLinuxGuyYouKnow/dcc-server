@@ -9,11 +9,12 @@ supabase: Client = create_client(supabase_url=url, supabase_key=key)
 
 load_dotenv()
 def signUpUser( request):
-    first_name = request.get('first_name')
-    last_name = request.get('last_name')
-    email = request.get('email')
-    password = request.get('password')
-    age = request.get('age')
+    data = request.get_json()
+    first_name = data.get('first_name')
+    last_name = data.get('last_name')
+    email = data.get('email')
+    password = data.get('password')
+    age = data.get('age')
     try:
      supabase.auth.sign_up({'email':email, 'password':password})
      return true
