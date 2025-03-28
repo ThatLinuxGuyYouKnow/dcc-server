@@ -16,7 +16,13 @@ def signUpUser( request):
     password = data.get('password')
     age = data.get('age')
     try:
-     supabase.auth.sign_up({'email':email, 'password':password})
-     return true
+     auth_response = return supabase.auth.sign_up({'email':email, 'password':password})
+     data = {
+        "user_id": auth_response.user.id,
+        "last_name":last_name,
+        "first_name": first_name,
+        "email":email
+     }
+     return true,  data
     except Exception as e: 
      return e
